@@ -1,0 +1,101 @@
+
+Easy Configurator, configuration engine  V_3_4 
+
+log created on Sat Apr 11 16:15:51 2026
+
+Analyzing the project file
+
+Easy Configurator project slave_1.prj
+
+OUTPUTS_TAG
+Line 4 --- test_out                uint8_t
+Line 5 --- LED_out                 uint8_t
+INPUTS_TAG
+Line 7 --- test_in                 uint8_t
+Line 8 --- LED_in                  uint8_t
+INFO_TAG
+0x00001
+NikhilLab
+0x001
+0x001
+EtherCAT_Slave
+EtherCAT_Slave
+END_TAG
+
+The slave_1.prj configuration file is correct
+
+ByteNumOut 2
+ByteNumIn  2
+PdoNumOut  2
+PdoNumIn   2
+
+Creating the slave_1.xml file
+
+PROJECT_TAG   slave_1.prj
+VENDOID_TAG   00001
+VEN_NAM_TAG   NikhilLab
+PRO_COD_TAG   001
+REVISIO_TAG   001
+DEV_NAM_TAG   EtherCAT_Slave
+DEV_NAM_TAG   EtherCAT_Slave
+
+FIRST_TAG
+
+Output entries
+          <Entry>
+            <Index>#x5</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>test_out</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x5</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>LED_out</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+
+Input entries
+          <Entry>
+            <Index>#x6</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>test_in</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>LED_in</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+
+LAST_TAG
+
+The slave_1.xml file has been created
+
+Creating the slave_1.h file
+
+#define CUST_BYTE_NUM_OUT	2
+#define CUST_BYTE_NUM_IN	2
+#define TOT_BYTE_NUM_ROUND_OUT	4
+#define TOT_BYTE_NUM_ROUND_IN	4
+
+
+Output entries
+		uint8_t     test_out;
+		uint8_t     LED_out;
+
+Input entries
+		uint8_t     test_in;
+		uint8_t     LED_in;
+
+The slave_1.h file has been created
+
+Creating the slave_1.bin file
+
+
+The slave_1.bin file has been created

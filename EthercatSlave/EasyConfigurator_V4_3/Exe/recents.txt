@@ -1,0 +1,1 @@
+E:\repos\python-ethercat\EthercatSlave\EasyConfigurator_V4_3\Projects\Pysoem_slave\slave_1\slave_1.prj

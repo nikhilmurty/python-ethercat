@@ -4,7 +4,7 @@ This is a repo to help with learning how to use ethercat. When I was learning ho
 
 ## Setup
 ### EthercatMaster
-This section sets up a simple ethercat master template using pysoem, an python wrapper for SOEM which is an open source ethercat master library. 
+This section sets up a simple ethercat master template using pysoem, an python wrapper for SOEM which is an open source ethercat master library. This is great for prototyping ethercat systems, but unfortunately, this is not good enough to be considered real-time. You would need to use C++ and a real-time kernel for that.
 
 ### EthercatSlave
 This section is to show how to make your own ethercat slave using a STM32 Nucleo and a Bausano EasyCAT shield, which is a LAN9252 shield that can be used on Arduino UNOs and anything with that footprint.
