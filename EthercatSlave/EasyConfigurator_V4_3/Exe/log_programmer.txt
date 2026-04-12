@@ -2,7 +2,7 @@
 AB&T Tecnologie Informatiche
 Easy Configurator programming engine Release V_2.1
  
-Log created on Saturday, 11 April 2026 16:15:57
+Log created on Sunday, 12 April 2026 12:37:52
 
 Opening file  E:\repos\python-ethercat\EthercatSlave\EasyConfigurator_V4_3\Projects\Pysoem_slave\slave_1\slave_1.bin
 
