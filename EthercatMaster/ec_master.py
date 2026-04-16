@@ -56,7 +56,6 @@ class EthercatMaster:
                 raise Exception(f"Issue initializing slave {len(self.slaves_list)}")
             
             self.expected_wkc = self.master.config_map()
-            print(f"Slaves configurated, working counter is {self.expected_wkc}")
 
             if self.master.state_check(pysoem.SAFEOP_STATE, 50000) != pysoem.SAFEOP_STATE:
                 self.master.read_state()
@@ -88,11 +87,11 @@ class EthercatMaster:
                 while 1:
                     #test case to see if outputs are going through: change in output should show in input
                     print(self.slaves_list[0].inputs.test_in)
-                    
+
                     #do nothing
                     time.sleep(1)
             except KeyboardInterrupt:
-                print("Stopping ethercat")
+                print("Stop requested")
 
             
             #stop ethercat
@@ -122,7 +121,6 @@ class EthercatMaster:
             slave.start()
 
     def stop(self):
-        print("Closing master")
         #kill the slaves and their threads
         for slave in self.slaves_list:
             slave.stop()
@@ -136,6 +134,7 @@ class EthercatMaster:
         self.master.write_state()
         
         #close master
+        print("Closing master")
         self.master.close()
 
 

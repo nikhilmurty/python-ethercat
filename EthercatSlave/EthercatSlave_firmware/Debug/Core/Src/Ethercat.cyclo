@@ -1,0 +1,13 @@
+../Core/Src/Ethercat.c:4:23:SPI_TransferRx	1
+../Core/Src/Ethercat.c:10:20:SPI_TransferTx	1
+../Core/Src/Ethercat.c:14:20:SCS_Low	1
+../Core/Src/Ethercat.c:18:20:SCS_High	1
+../Core/Src/Ethercat.c:31:6:EasyCAT_Init	10
+../Core/Src/Ethercat.c:75:9:EasyCAT_MainTask	7
+../Core/Src/Ethercat.c:105:6:EasyCAT_WriteAlias	1
+../Core/Src/Ethercat.c:110:17:SPIReadRegisterDirect	2
+../Core/Src/Ethercat.c:128:13:SPIWriteRegisterDirect	1
+../Core/Src/Ethercat.c:146:17:SPIReadRegisterIndirect	2
+../Core/Src/Ethercat.c:166:13:SPIWriteRegisterIndirect	2
+../Core/Src/Ethercat.c:186:13:SPIReadProcRamFifo	3
+../Core/Src/Ethercat.c:226:13:SPIWriteProcRamFifo	3

@@ -16,8 +16,8 @@ class EthercatSlave:
         self.outputs = OutputPDO()
 
         self.stop_event = threading.Event()
-        self.rx_thread = threading.Thread(target = self.rx)
-        self.tx_thread = threading.Thread(target = self.tx)
+        self.rx_thread = threading.Thread(target = self.rx_pdo)
+        self.tx_thread = threading.Thread(target = self.tx_pdo)
 
     def read(self):
         #reads the pdo inputs
@@ -28,7 +28,7 @@ class EthercatSlave:
         self.ec_slave.output = bytes(self.outputs)
 
     
-    def rx(self):
+    def rx_pdo(self):
         #read input values
         while not self.stop_event.is_set():
             #read values
@@ -40,24 +40,33 @@ class EthercatSlave:
             time.sleep(0.01)
 
 
-    def tx(self):
+    def tx_pdo(self):
         #write output values
         while not self.stop_event.is_set():
             #do something
-            self.outputs.test_out += 1
+            self.outputs.test_out += 2
+            print(f"tx: {self.outputs.test_out}")
+
+            if self.outputs.LED_out == 1:
+                self.outputs.LED_out = 0
+            else:
+                self.outputs.LED_out = 1
 
             #transmit
             self.write()
-            time.sleep(0.01)
+            time.sleep(2)
 
     def start(self):
         self.tx_thread.start()
         self.rx_thread.start()
+        print(f"Starting {self.ec_slave.name}")
 
     def stop(self):
         self.stop_event.set()
         self.tx_thread.join()
         self.rx_thread.join()
+
+        print(f"Stopping {self.ec_slave.name}")
 
 class InputPDO(ctypes.LittleEndianStructure):
     _pack_ = 1
