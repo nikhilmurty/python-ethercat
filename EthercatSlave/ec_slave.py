@@ -45,7 +45,7 @@ class EthercatSlave:
         while not self.stop_event.is_set():
             #do something
             self.outputs.test_out += 2
-            print(f"tx: {self.outputs.test_out}")
+            
 
             if self.outputs.LED_out == 1:
                 self.outputs.LED_out = 0

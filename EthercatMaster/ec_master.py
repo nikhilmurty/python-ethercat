@@ -86,7 +86,8 @@ class EthercatMaster:
             try:
                 while 1:
                     #test case to see if outputs are going through: change in output should show in input
-                    print(self.slaves_list[0].inputs.test_in)
+                    print(f"rx: {self.slaves_list[0].inputs.test_in}")
+                    print(f"tx: {self.slaves_list[0].outputs.test_out}")
 
                     #do nothing
                     time.sleep(1)
